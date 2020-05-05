@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/backgroundplashscreen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingTop="50dp"
+        android:paddingRight="120dp"
+        android:paddingLeft="130dp"
+        android:background="#80000000">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconbag"
+            android:layout_gravity="center">
+        </ImageView>
+
+        <TextView
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thế giới mua sắm trong tầm tay bạn">
+        </TextView>
+
+
+        <ImageView
+            android:paddingTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconmoney"
+            android:layout_gravity="center">
+        </ImageView>
+
+        <TextView
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giao hàng tận nơi + thanh toán dễ dàng">
+        </TextView>
+
+        <ImageView
+            android:paddingTop="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconsercurity"
+            android:layout_gravity="center">
+        </ImageView>
+
+        <TextView
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100% bảo vệ người tiêu dùng">
+        </TextView>
+
+    </LinearLayout>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lazadacustomerlogo"
+        android:layout_gravity="bottom|center"
+        ></ImageView>
+
+</FrameLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhận xét về sản phẩm này">
+    </TextView>
+
+    <RatingBar
+        android:id="@+id/rb_danhgia"
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:padding="10dp"
+        android:scaleX="0.5"
+        android:scaleY="0.5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"></RatingBar>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ip_tieude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_tieude"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="100"
+            android:hint="Tiêu đề đánh giá"
+            android:lines="1">
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ip_noidung"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/edt_noidung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:scrollbars="vertical"
+            android:hint="Nội dung đánh giá">
+        </EditText>
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <Button
+        android:background="@color/bgLogo"
+        android:id="@+id/btn_Danhgia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đồng ý "
+        android:layout_marginTop="10dp"></Button>
+
+</LinearLayout>

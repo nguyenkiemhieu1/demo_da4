@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cần điền tất cả các mục"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"></TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ip_edt_hotendangki">
+            <EditText
+                android:id="@+id/edt_hotendk"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Họ tên đầy đủ">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ip_edt_diachi_email">
+            <EditText
+                android:id="@+id/edt_diachi_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:hint="Điền địa chỉ email">
+            </EditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ip_edt_matkhau">
+            <com.example.demo_da4.CustomView.PasswordEdittext
+                android:id="@+id/edt_matkhaudk"
+                android:textColor="@color/colorBlack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mật khẩu"
+                app:useStrike="true"
+                app:useValidate="true">
+            </com.example.demo_da4.CustomView.PasswordEdittext>
+
+        </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mật khẩu phải gồm 6 kí tự và 1 chữ in hoa">
+        </TextView>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:id="@+id/ip_edt_nhaplai_matkhau">
+            <com.example.demo_da4.CustomView.PasswordEdittext
+                android:id="@+id/edt_nhaplai_matkhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:hint= "Nhập lại mật khẩu"
+                app:useStrike="true">
+            </com.example.demo_da4.CustomView.PasswordEdittext>
+        </com.google.android.material.textfield.TextInputLayout>
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/emaildocquyen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tôi muốn nhận các khuyến mãi đọc quyền cho email"
+            android:checked="true"
+            android:layout_margin="10dp"/>
+        <Button
+            android:id="@+id/btnDangKy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Đăng kí"
+            android:padding="10dp"
+            android:background="@color/bgLogo"></Button>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chúng tôi đã hiểu rõ các điều khoản bảo mật của lazada"
+            android:layout_margin="10dp">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hoặc đăng ký bằng"
+            android:layout_margin="10dp"
+            android:gravity="center">
+        </TextView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDangNhapFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/vienfacebook"
+                android:drawableLeft="@drawable/facebookiconsmall"
+                android:text="Facebook"
+                android:textColor="@color/colorFB"></Button>
+
+            <Button
+                android:id="@+id/btnDangNhapGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/googleplussmall"
+                android:layout_weight="1"
+                android:text="Google"
+                android:textColor="@color/colorGoogle"
+                android:background="@drawable/viengoogle"
+                android:layout_margin="10dp"></Button>
+
+        </LinearLayout>
+
+</LinearLayout>
