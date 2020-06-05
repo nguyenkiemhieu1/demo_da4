@@ -49,14 +49,7 @@
                 android:textAlignment="center">
 
             </TextView>
-            <TextView
-                android:id="@+id/txt_GiamGiaDienTu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:textAlignment="center">
 
-            </TextView>
         </LinearLayout>
 
     </LinearLayout>

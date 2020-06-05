@@ -22,13 +22,13 @@ public class PresenterLogicDienTu implements  IPresenterDienTu {
         List<DienTu> dienTus = new ArrayList<>();
 
        List<ThuongHieu> thuongHieuList = model_dientu.LayDanhsachThuongHieuLon("LayDanhSachCacThuongHieu", "DANHSACHTHUONGHIEU");
-       List<SanPham> sanPhamList=model_dientu.LayDanhSachSanPhamTop("LayDanhSachTopDienThoaiVaMayTinhBang", "TOPDIENTHOAI&MAYTINHBANG");
+       List<SanPham> sanPhamList=model_dientu.LayDanhSachSanPhamTop("LayDanhSachTopTivi", "TOPTIVI");
 
         DienTu dienTu = new DienTu();
         dienTu.setThuongHieus(thuongHieuList);
         dienTu.setSamPhams(sanPhamList);
         dienTu.setTennoibat("Danh sách thương hiệu");
-        dienTu.setTentopnoibat("Top điện thoại và máy tính bảng");
+        dienTu.setTentopnoibat("Top Tivi bán chạy");
         dienTu.setThuonghieu(true);
         dienTus.add(dienTu);
 
@@ -51,20 +51,18 @@ public class PresenterLogicDienTu implements  IPresenterDienTu {
         dienTu2.setThuongHieus(tienichList);
         dienTu2.setSamPhams(ToptienichList);
         dienTu2.setTennoibat("Tiện ích");
-        dienTu2.setTentopnoibat("Top video và tv");
+        dienTu2.setTentopnoibat("Top tiện ích");
         dienTu2.setThuonghieu(false);
         dienTus.add(dienTu2);
 
         if(thuongHieuList.size() > 0 && sanPhamList.size() > 0){
            viewDienTu.HienThiDanhSach(dienTus);
        }
-
     }
 
     @Override
     public void layDanhSachLogothuongHieu() {
         List<ThuongHieu> thuongHieuList = model_dientu.LayThuongHieuLon("LayLogoThuongHieuLon","DANHSACHTHUONGHIEUDIENTU");
-
         if(thuongHieuList.size()>0){
             viewDienTu.HienThiLogoThuongHieu(thuongHieuList);
         }else {

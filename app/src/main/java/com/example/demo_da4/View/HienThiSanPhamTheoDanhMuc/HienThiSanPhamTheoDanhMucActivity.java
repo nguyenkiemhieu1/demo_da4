@@ -1,29 +1,42 @@
 package com.example.demo_da4.View.HienThiSanPhamTheoDanhMuc;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.demo_da4.Adapter.AdapterDienThoaiDienTu;
 import com.example.demo_da4.Model.ObjectClass.SanPham;
+
 import com.example.demo_da4.Presenter.HienThiSanPhamTheoDanhMuc.PresenterLogicHienThiSanPhamTheoDanhMuc;
 import com.example.demo_da4.R;
+
 import com.example.demo_da4.View.TrangChu.ViewHienThiSanPhamTheoDanhMuc;
 
 import java.util.List;
 
-public class HienThiSanPhamTheoDanhMucActivity extends AppCompatActivity implements ViewHienThiSanPhamTheoDanhMuc, View.OnClickListener{
+public class HienThiSanPhamTheoDanhMucActivity extends Fragment implements ViewHienThiSanPhamTheoDanhMuc, View.OnClickListener{
     RecyclerView recyclerView;
     Button btn_ThayDoiTrangThaiRecycler;
     boolean danggrid = true;
@@ -33,37 +46,52 @@ public class HienThiSanPhamTheoDanhMucActivity extends AppCompatActivity impleme
     boolean kiemtra;
     AdapterDienThoaiDienTu adapterDienThoaiDienTu;
     Toolbar toolbar;
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_hienthisanphamtheodanhmuc);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_hienthisanphamtheodanhmuc);
-        btn_ThayDoiTrangThaiRecycler = (Button) findViewById(R.id.btn_ThayDoiTrangThaiRecycler);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
 
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup viewGroup, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.layout_hienthisanphamtheodanhmuc, viewGroup, false);
 
-        Intent intent = getIntent();
-        masp = intent.getIntExtra("MASP", 0);
-        String tenloai = intent.getStringExtra("TENLOAI");
-        kiemtra = intent.getBooleanExtra("KIEMTRA", false);
+        setHasOptionsMenu(false);
 
-//      Log.d("chon",  masp +  " - " + tenloai + "  -  " +kiemtra  );
+        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_hienthisanphamtheodanhmuc);
+        btn_ThayDoiTrangThaiRecycler = (Button) v.findViewById(R.id.btn_ThayDoiTrangThaiRecycler);
+        toolbar = (Toolbar) v.findViewById(R.id.toolbar_danhmuc);
+
+
+        Bundle bundle = getArguments();
+        masp = bundle.getInt("MALOAI", 0);
+        String tenloai = bundle.getString("TENLOAI");
+        kiemtra = bundle.getBoolean("KIEMTRA", false);
+        toolbar.setTitle(tenloai);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         presenterLogicHienThiSanPhamTheoDanhMuc = new PresenterLogicHienThiSanPhamTheoDanhMuc(this);
         presenterLogicHienThiSanPhamTheoDanhMuc.LayDanhSachSanPhamTheoMaLoai(masp, kiemtra);
 
 
         btn_ThayDoiTrangThaiRecycler.setOnClickListener(this);
-        toolbar.setTitle(tenloai);
-        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager().popBackStack("TrangchuActivity", FragmentManager.POP_BACK_STACK_INCLUSIVE);
+            }
+        });
+
+        return v;
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menutrangchu, menu);
-        return true;
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.menutrangchu, menu);
+
+
+        super.onCreateOptionsMenu(menu, inflater);
     }
+
+
 
     @Override
     public void HienDanhSachSanPham(List<SanPham> sanPhams) {
@@ -72,11 +100,11 @@ public class HienThiSanPhamTheoDanhMucActivity extends AppCompatActivity impleme
 
 //        sanPhamList1 = sanPhams;
         if(danggrid ){
-            layoutManager = new GridLayoutManager(HienThiSanPhamTheoDanhMucActivity.this,2);
-            adapterDienThoaiDienTu = new AdapterDienThoaiDienTu(HienThiSanPhamTheoDanhMucActivity.this,R.layout.custom_layout_grid, sanPhams);
+            layoutManager = new GridLayoutManager(getContext(),2);
+            adapterDienThoaiDienTu = new AdapterDienThoaiDienTu(getContext(),R.layout.custom_layout_grid, sanPhams);
         }else {
-            layoutManager = new LinearLayoutManager(HienThiSanPhamTheoDanhMucActivity.this);
-            adapterDienThoaiDienTu = new AdapterDienThoaiDienTu(HienThiSanPhamTheoDanhMucActivity.this,R.layout.custom_layout_list, sanPhams);
+            layoutManager = new LinearLayoutManager(getContext());
+            adapterDienThoaiDienTu = new AdapterDienThoaiDienTu(getContext(),R.layout.custom_layout_list, sanPhams);
         }
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapterDienThoaiDienTu);
@@ -94,7 +122,6 @@ public class HienThiSanPhamTheoDanhMucActivity extends AppCompatActivity impleme
         int id = view.getId();
         switch (id){
             case R.id.btn_ThayDoiTrangThaiRecycler:
-
                 danggrid = !danggrid;
                 presenterLogicHienThiSanPhamTheoDanhMuc.LayDanhSachSanPhamTheoMaLoai(masp, kiemtra);
                 break;

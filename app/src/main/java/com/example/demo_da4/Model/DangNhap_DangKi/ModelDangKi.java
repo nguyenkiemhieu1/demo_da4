@@ -35,8 +35,6 @@ public class ModelDangKi {
         HashMap<String,String> hsMaLoaiNV = new HashMap<>();
         hsMaLoaiNV.put("maloainv",String.valueOf(nhanVien.getMaLoaiNV()));
 
-        HashMap<String,String> hsEmailDocQuyen = new HashMap<>();
-        hsEmailDocQuyen.put("emaildocquyen",nhanVien.getEmailDocQuyen());
 
 
         attrs.add(hsHam);
@@ -44,7 +42,6 @@ public class ModelDangKi {
         attrs.add(hsTenDN);
         attrs.add(hsMatKhau);
         attrs.add(hsMaLoaiNV);
-        attrs.add(hsEmailDocQuyen);
         DownloadJSON downloadJSON=new DownloadJSON(duongdan, attrs);
         downloadJSON.execute();
         try {
@@ -66,6 +63,6 @@ public class ModelDangKi {
         }
 
 
-        return kiemtra;
+            return kiemtra;
     }
 }

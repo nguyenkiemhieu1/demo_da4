@@ -42,7 +42,7 @@ public class ModelChiTietSanPham {
 //        downloadJSON.execute();
 
 
-        try {
+       try  {
             dataJSON=downloadJSON.get();
 
             JSONObject jsonObject = new JSONObject(dataJSON);

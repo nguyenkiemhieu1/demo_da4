@@ -23,7 +23,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.List;
 
-public class AdapterDienThoaiDienTu  extends RecyclerView.Adapter<AdapterDienThoaiDienTu.ViewHolderTopDienThoaiDienTu> {
+public class    AdapterDienThoaiDienTu  extends RecyclerView.Adapter<AdapterDienThoaiDienTu.ViewHolderTopDienThoaiDienTu> {
 
     Context context;
      List<SanPham> sanPhamList;

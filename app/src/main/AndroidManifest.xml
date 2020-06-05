@@ -26,12 +26,23 @@
         <activity android:name=".View.TrangChu.TrangChuActivity"
             android:screenOrientation="portrait"
             android:label="trang chu"/>
-        <activity android:name=".View.DangNhap_DangKi.DangNhapActivity"
-            android:screenOrientation="portrait"
-            android:label="Đăng nhập/Đăng kí"
-            ></activity>
-        <activity android:name=".View.HienThiSanPhamTheoDanhMuc.HienThiSanPhamTheoDanhMucActivity"></activity>
-        <activity android:name=".View.ChiTietSanPham.ChiTietSanPhamActivity"></activity>
+<!--        <activity android:name=".View.DangNhap_DangKi.DangNhapActivity"-->
+<!--            android:screenOrientation="portrait"-->
+<!--            android:label="Đăng nhập/Đăng kí"-->
+<!--            ></activity>-->
+        <activity android:name=".View.HienThiSanPhamTheoDanhMuc.HienThiSanPhamTheoDanhMucActivity">
+        </activity>
+        <activity android:name=".View.ChiTietSanPham.ChiTietSanPhamActivity">
+        </activity>
+        <activity android:name=".View.DanhGia.DanhGiaActivity"
+            android:theme="@style/Base.Theme.AppCompat.Dialog">
+        </activity>
+        <activity android:name=".View.GioHang.GioHangActivity"></activity>
+        <activity android:name=".View.ThanhToan.ThanhToanActivity"></activity>
+        <activity android:name=".View.TimKiem.TimKiemActivity"/>
+
+        <activity android:name=".View.DangNhap_DangKi.Fragment.FragmentDangNhap"/>
+        <activity android:name=".View.DangNhap_DangKi.Fragment.FragmentDangKi"/>
     </application>
 
 </manifest>

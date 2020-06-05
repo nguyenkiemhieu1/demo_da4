@@ -2,6 +2,7 @@ package com.example.demo_da4.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.demo_da4.Model.ObjectClass.ThuongHieu;
@@ -72,12 +76,25 @@ public class AdapterThuongHieuLon extends RecyclerView.Adapter<AdapterThuongHieu
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentsanphamTheoDanhMuc = new Intent(context, HienThiSanPhamTheoDanhMucActivity.class);
-                intentsanphamTheoDanhMuc.putExtra("MASP", thuongHieu.getMATHUONGHIEU());
-                intentsanphamTheoDanhMuc.putExtra("TENLOAI", thuongHieu.getTENTHUONGHIEU());
-                intentsanphamTheoDanhMuc.putExtra("KIEMTRA", kiemtra);
-                context.startActivity(intentsanphamTheoDanhMuc);
-                Log.d("click",thuongHieu.getMATHUONGHIEU() +  "  -  "+ thuongHieu.getTENTHUONGHIEU());
+
+                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                HienThiSanPhamTheoDanhMucActivity h = new HienThiSanPhamTheoDanhMucActivity();
+
+                Bundle bundle = new Bundle();
+
+                bundle.putInt("MALOAI", thuongHieu.getMATHUONGHIEU());
+                bundle.putBoolean("KIEMTRA", kiemtra);
+                bundle.putString("TENLOAI",thuongHieu.getTENTHUONGHIEU());
+
+                h.setArguments(bundle);
+
+                fragmentTransaction.addToBackStack("TrangchuActivity");
+
+                fragmentTransaction.replace(R.id.FrameLayout_Add, h);
+
+                fragmentTransaction.commit();
             }
         });
 

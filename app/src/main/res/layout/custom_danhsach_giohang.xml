@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:id="@+id/cardView">
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/img_HinhGioHang"
+                android:layout_width="120dp"
+                android:layout_height="140dp"
+                android:src="@drawable/backgroundplashscreen"
+                android:scaleType="centerCrop">
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal" >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/txtTieuDeGioHang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tên Sản Phẩm"
+                        >
+
+                    </TextView>
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:id="@+id/txt_GiaGioHang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giá tiền"
+                        android:textColor="@color/colorRed"
+                        android:textAlignment="center">
+
+                    </TextView>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center">
+                        <ImageButton
+                            android:id="@+id/imb_GiamSLSanPham"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_remove_black_24dp"
+                            android:padding="7dp">
+                        </ImageButton>
+                        <TextView
+                            android:id="@+id/txt_SLSanPham"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:padding="7dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0">
+
+                        </TextView>
+                        <ImageButton
+                            android:id="@+id/imb_TangSLSanPham"
+                            android:padding="7dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_add_black_24dp">
+                        </ImageButton>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+                <ImageView
+                    android:id="@+id/img_XoaSanPham"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_delete_black_24dp"
+                    android:layout_gravity="center">
+                </ImageView>
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+</androidx.cardview.widget.CardView>
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TEST"
+        android:id="@+id/txt_TieuDeDanhGia"
+        >
+    </TextView>
+    <TextView
+        android:padding="5dp"
+        android:id="@+id/txt_DkDangBoi"
+        android:textSize="18sp"
+        android:textColor="@color/colorGray"
+        android:textStyle="bold"
+        android:text="ĐĂNG BỞI"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </TextView>
+
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NÔI DUNG"
+        android:id="@+id/txt_NoiDungDanhGia"
+        >
+    </TextView>
+</LinearLayout>

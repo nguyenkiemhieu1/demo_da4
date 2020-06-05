@@ -4,8 +4,19 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp">
+        >
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/id_toolbarDangKi"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways">
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
         <TextView
+            android:padding="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cần điền tất cả các mục"
@@ -15,6 +26,7 @@
             android:textStyle="bold"></TextView>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:padding="10dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ip_edt_hotendangki">
@@ -28,6 +40,7 @@
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
+            android:padding="10dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:id="@+id/ip_edt_diachi_email">
@@ -44,6 +57,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:layout_margin="10dp"
             android:id="@+id/ip_edt_matkhau">
             <com.example.demo_da4.CustomView.PasswordEdittext
@@ -73,19 +87,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorBlack"
+                android:padding="10dp"
                 android:hint= "Nhập lại mật khẩu"
                 app:useStrike="true">
             </com.example.demo_da4.CustomView.PasswordEdittext>
         </com.google.android.material.textfield.TextInputLayout>
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/emaildocquyen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tôi muốn nhận các khuyến mãi đọc quyền cho email"
-            android:checked="true"
-            android:layout_margin="10dp"/>
+
         <Button
             android:id="@+id/btnDangKy"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Đăng kí"
@@ -98,42 +108,5 @@
             android:layout_margin="10dp">
 
         </TextView>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Hoặc đăng ký bằng"
-            android:layout_margin="10dp"
-            android:gravity="center">
-        </TextView>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnDangNhapFacebook"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@drawable/vienfacebook"
-                android:drawableLeft="@drawable/facebookiconsmall"
-                android:text="Facebook"
-                android:textColor="@color/colorFB"></Button>
-
-            <Button
-                android:id="@+id/btnDangNhapGoogle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/googleplussmall"
-                android:layout_weight="1"
-                android:text="Google"
-                android:textColor="@color/colorGoogle"
-                android:background="@drawable/viengoogle"
-                android:layout_margin="10dp"></Button>
-
-        </LinearLayout>
 
 </LinearLayout>

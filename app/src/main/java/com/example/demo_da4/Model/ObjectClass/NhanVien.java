@@ -2,7 +2,7 @@ package com.example.demo_da4.Model.ObjectClass;
 
 public class NhanVien {
     int MaNV, MaLoaiNV,GioiTinh;
-    String TenDN , MatKhau, TenNV, DiaChi, NgaySinh, SoDT, EmailDocQuyen;
+    String TenDN , MatKhau, TenNV, DiaChi, NgaySinh, SoDT;
 
     public int getMaNV() {
         return MaNV;
@@ -76,11 +76,4 @@ public class NhanVien {
         SoDT = soDT;
     }
 
-    public String getEmailDocQuyen() {
-        return EmailDocQuyen;
-    }
-
-    public void setEmailDocQuyen(String emailDocQuyen) {
-        EmailDocQuyen = emailDocQuyen;
-    }
 }

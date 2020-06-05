@@ -1,5 +1,6 @@
 package com.example.demo_da4.View.DangNhap_DangKi.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.LayoutInflater;
@@ -12,62 +13,102 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import com.example.demo_da4.Model.ObjectClass.NhanVien;
 import com.example.demo_da4.Presenter.DangKi.PresenterLogicDangKi;
 import com.example.demo_da4.R;
 import com.example.demo_da4.View.DangNhap_DangKi.ViewDangKi;
+import com.example.demo_da4.View.TrangChu.TrangChuActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
-public class FragmentDangKi extends Fragment  implements ViewDangKi , View.OnClickListener, View.OnFocusChangeListener {
+public class FragmentDangKi extends AppCompatActivity implements ViewDangKi , View.OnClickListener, View.OnFocusChangeListener {
     PresenterLogicDangKi presenterLogicDangKi;
     Button btnDangKy;
     EditText edt_hotendk, edt_diachi_email, edt_nhaplai_matkhau, edt_matkhaudk;
-    SwitchCompat emaildocquyen;
     TextInputLayout ip_edt_hotendangki, ip_edt_diachi_email, ip_edt_matkhau, ip_edt_nhaplai_matkhau;
     Boolean kiemtrathongtin = false;
+    Toolbar toolbar;
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.layout_fragment_dangki, container, false);
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.layout_fragment_dangki);
+        btnDangKy = (Button) findViewById(R.id.btnDangKy);
+        toolbar = (Toolbar) findViewById(R.id.id_toolbarDangKi);
+        edt_hotendk = (EditText) findViewById(R.id.edt_hotendk);
+        edt_diachi_email = (EditText) findViewById(R.id.edt_diachi_email);
+        edt_nhaplai_matkhau = (EditText) findViewById(R.id.edt_nhaplai_matkhau);
+        edt_matkhaudk = (EditText) findViewById(R.id.edt_matkhaudk);
+
+        ip_edt_hotendangki = (TextInputLayout) findViewById(R.id.ip_edt_hotendangki);
+        ip_edt_diachi_email = (TextInputLayout) findViewById(R.id.ip_edt_diachi_email);
+        ip_edt_matkhau = (TextInputLayout) findViewById(R.id.ip_edt_matkhau);
+        ip_edt_nhaplai_matkhau = (TextInputLayout)findViewById(R.id.ip_edt_nhaplai_matkhau);
+        toolbar.setTitle("Đăng kí");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), TrangChuActivity.class));
+            }
+        });
 
 
-        btnDangKy = (Button) view.findViewById(R.id.btnDangKy);
-        edt_hotendk = (EditText) view.findViewById(R.id.edt_hotendk);
-        edt_diachi_email = (EditText) view.findViewById(R.id.edt_diachi_email);
-        edt_nhaplai_matkhau = (EditText) view.findViewById(R.id.edt_nhaplai_matkhau);
-        edt_matkhaudk = (EditText) view.findViewById(R.id.edt_matkhaudk);
-        emaildocquyen = (SwitchCompat) view.findViewById(R.id.emaildocquyen);
 
-        ip_edt_hotendangki = (TextInputLayout) view.findViewById(R.id.ip_edt_hotendangki);
-        ip_edt_diachi_email = (TextInputLayout) view.findViewById(R.id.ip_edt_diachi_email);
-        ip_edt_matkhau = (TextInputLayout) view.findViewById(R.id.ip_edt_matkhau);
-        ip_edt_nhaplai_matkhau = (TextInputLayout) view.findViewById(R.id.ip_edt_nhaplai_matkhau);
 
-        presenterLogicDangKi = new PresenterLogicDangKi(this);
+
+    presenterLogicDangKi = new PresenterLogicDangKi(this);
 
         btnDangKy.setOnClickListener(this);
         edt_hotendk.setOnFocusChangeListener(this);
         edt_diachi_email.setOnFocusChangeListener(this);
-//        edt_matkhaudk.setOnFocusChangeListener(this);
         edt_nhaplai_matkhau.setOnFocusChangeListener(this);
 
-
-        return view;
     }
+
+//    @Nullable
+//    @Override
+//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.layout_fragment_dangki, container, false);
+//
+//
+//        btnDangKy = (Button) view.findViewById(R.id.btnDangKy);
+//        edt_hotendk = (EditText) view.findViewById(R.id.edt_hotendk);
+//        edt_diachi_email = (EditText) view.findViewById(R.id.edt_diachi_email);
+//        edt_nhaplai_matkhau = (EditText) view.findViewById(R.id.edt_nhaplai_matkhau);
+//        edt_matkhaudk = (EditText) view.findViewById(R.id.edt_matkhaudk);
+//
+//        ip_edt_hotendangki = (TextInputLayout) view.findViewById(R.id.ip_edt_hotendangki);
+//        ip_edt_diachi_email = (TextInputLayout) view.findViewById(R.id.ip_edt_diachi_email);
+//        ip_edt_matkhau = (TextInputLayout) view.findViewById(R.id.ip_edt_matkhau);
+//        ip_edt_nhaplai_matkhau = (TextInputLayout) view.findViewById(R.id.ip_edt_nhaplai_matkhau);
+//
+//        presenterLogicDangKi = new PresenterLogicDangKi(this);
+//
+//        btnDangKy.setOnClickListener(this);
+//        edt_hotendk.setOnFocusChangeListener(this);
+//        edt_diachi_email.setOnFocusChangeListener(this);
+//        edt_nhaplai_matkhau.setOnFocusChangeListener(this);
+//
+//
+//        return view;
+//    }
 
     @Override
     public void DangKiThanhCong() {
-        Toast.makeText(getActivity(), "Đăng kí thành công", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đăng kí thành công", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
     public void DangKiThatBai() {
-        Toast.makeText(getActivity(), "Đăng kí thất bại", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đăng kí thất bại", Toast.LENGTH_SHORT).show();
 
     }
 
@@ -82,7 +123,6 @@ public class FragmentDangKi extends Fragment  implements ViewDangKi , View.OnCli
 
     }
 
-    String Emaildocquyen = "";
 
     private void btnDangKy() {
 
@@ -91,22 +131,12 @@ public class FragmentDangKi extends Fragment  implements ViewDangKi , View.OnCli
         String matkhau = edt_matkhaudk.getText().toString();
         String nhaplaimatkhau = edt_nhaplai_matkhau.getText().toString();
 
-        emaildocquyen.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                Emaildocquyen = b + "";
-
-            }
-        });
 
         if (kiemtrathongtin) {
-
-
             NhanVien nhanVien = new NhanVien();
             nhanVien.setTenNV(hoten);
             nhanVien.setTenDN(email);
             nhanVien.setMatKhau(matkhau);
-            nhanVien.setEmailDocQuyen(Emaildocquyen);
             nhanVien.setMaLoaiNV(2);
 
             presenterLogicDangKi.ThucHienDangKi(nhanVien);
@@ -139,7 +169,7 @@ public class FragmentDangKi extends Fragment  implements ViewDangKi , View.OnCli
             case R.id.edt_diachi_email:
                 if (!b) {
                     String chuoi = ((EditText) view).getText().toString();
-//                   Boolean kiemtraemail = Patterns.EMAIL_ADDRESS.matcher(chuoi).matches();
+
                     if (chuoi.trim().equals("") || chuoi.equals(null)) {
                         ip_edt_diachi_email.setErrorEnabled(true);
                         ip_edt_diachi_email.setError("Bạn hãy nhập địa chỉ email!");

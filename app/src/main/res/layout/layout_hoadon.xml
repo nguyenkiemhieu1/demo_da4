@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGray">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:id="@+id/toolbar_muahang"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/bgToolbar">
+    </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhile"
+        android:layout_margin="15dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"
+            android:text="Người nhận"
+            android:layout_marginTop="5dp"
+            >
+        </TextView>
+
+        <EditText
+            android:textColor="@color/colorGray"
+            android:id="@+id/edtTenNguoiNhan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/vien"
+            android:hint="Nhập tên người nhận"
+            android:textSize="12dp"></EditText>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"
+            android:text="Địa chỉ nhận"
+            android:layout_marginTop="10dp">
+        </TextView>
+        <EditText
+            android:textColor="@color/colorGray"
+            android:id="@+id/edtDiaChi"
+            android:textSize="10dp"
+            android:background="@drawable/vien"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:gravity="top"
+            android:hint="Nhập địa chỉ người nhận"
+            android:layout_marginTop="10dp">
+        </EditText>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"
+            android:text="Số điện thoại người nhận"
+            android:layout_marginTop="10dp">
+        </TextView>
+
+        <EditText
+            android:textColor="@color/colorGray"
+            android:id="@+id/edtSDT"
+            android:background="@drawable/vien"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:textSize="10sp"
+            android:hint="Nhập số điện thoại người nhận"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+             />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"
+            android:text="Giao hàng"
+            android:layout_marginTop="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/imb_giaohang"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/ship"
+                android:scaleType="centerInside"
+                android:background="@color/colorWhile"
+
+                >
+            </ImageButton>
+            <ImageButton
+                android:id="@+id/imb_chuyenkhoan"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/visa"
+                android:scaleType="centerInside"
+                android:background="@color/colorWhile"
+
+                >
+            </ImageButton>
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/cb_thoathuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tôi cam kết các thông tin trên hoàn toàn chính xác">
+        </CheckBox>
+        <Button
+            android:background="@color/bgLogo"
+            android:padding="18dp"
+            android:layout_gravity="bottom"
+            android:id="@+id/btn_MuaNgay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Thanh Toán"
+            android:layout_marginBottom="5dp"
+            >
+        </Button>
+
+
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

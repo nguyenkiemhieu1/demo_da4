@@ -12,6 +12,25 @@ public class SanPham {
     String ANHLON, THONGTIN;
     String TENSANPHAM;
     List<ChiTietSanPham> chiTietSanPhams;
+    byte[] hinhgiohang;
+
+    public int getSoluongtonkho() {
+        return soluongtonkho;
+    }
+
+    public void setSoluongtonkho(int soluongtonkho) {
+        this.soluongtonkho = soluongtonkho;
+    }
+
+    int soluongtonkho;
+
+    public byte[] getHinhgiohang() {
+        return hinhgiohang;
+    }
+
+    public void setHinhgiohang(byte[] hinhgiohang) {
+        this.hinhgiohang = hinhgiohang;
+    }
 
     public List<ChiTietSanPham> getChiTietSanPhams() {
         return chiTietSanPhams;

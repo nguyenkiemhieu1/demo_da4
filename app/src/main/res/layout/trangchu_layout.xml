@@ -7,92 +7,99 @@
     android:layout_height="match_parent"
     android:id="@+id/drawerlayout">
     <FrameLayout
-        android:id="@+id/content"
+        android:id="@+id/FrameLayout_Add"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <LinearLayout
-            android:orientation="vertical" android:layout_width="match_parent"
+        <FrameLayout
+            android:id="@+id/content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/bgToolbar">
-                <LinearLayout
+            <LinearLayout
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.appbar.AppBarLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <androidx.appcompat.widget.Toolbar
-                        android:id="@+id/id_toolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:logo="@mipmap/logo"
-                        app:theme="@style/menuitemcolor">
-
-                    </androidx.appcompat.widget.Toolbar>
+                    android:background="@color/bgToolbar">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
-                        android:orientation="horizontal"
-                        android:background="@drawable/bgseach">
-
-                        <Button
+                        android:orientation="vertical">
+                        <androidx.appcompat.widget.Toolbar
+                            android:id="@+id/id_toolbar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Tìm kiếm trên lazada"
-                            android:textAlignment="textStart"
-                            android:layout_gravity="start"
-                            android:background="@drawable/selectorbgsearch"
-                            android:textColor="@color/colorGray"
-                            android:drawableLeft="@drawable/ic_search_black_24dp"
-                            android:textAllCaps="false"
-                            android:paddingLeft="10dp"
-                            android:layout_weight="1">
-                        </Button>
+                            app:logo="@mipmap/logo"
+                            app:theme="@style/menuitemcolor">
 
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="@color/bgToolbar"
-                            ></View>
-                        <ImageView
-                            android:layout_gravity="center"
-                            android:layout_margin="10dp"
-                            android:layout_width="wrap_content"
+                        </androidx.appcompat.widget.Toolbar>
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/selectorbgsearch"
-                            android:src="@drawable/ic_photo_camera_black_24dp"
-                            ></ImageView>
+                            android:layout_margin="10dp"
+                            android:orientation="horizontal"
+                            android:background="@drawable/bgseach">
+
+                            <Button
+                                android:id="@+id/btn_timkiem"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Tìm kiếm trên lazada"
+                                android:textAlignment="textStart"
+                                android:layout_gravity="start"
+                                android:background="@drawable/selectorbgsearch"
+                                android:textColor="@color/colorGray"
+                                android:drawableLeft="@drawable/ic_search_black_24dp"
+                                android:textAllCaps="false"
+                                android:paddingLeft="10dp"
+                                android:layout_weight="1">
+                            </Button>
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@color/bgToolbar"
+                                ></View>
+                            <ImageView
+                                android:layout_gravity="center"
+                                android:layout_margin="10dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/selectorbgsearch"
+                                android:src="@drawable/ic_photo_camera_black_24dp"
+                                ></ImageView>
+                        </LinearLayout>
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tabTextColor="@color/colorGray"
+                            app:tabTextAppearance="@style/capfale"
+                            >
+
+                        </com.google.android.material.tabs.TabLayout>
                     </LinearLayout>
-                    <com.google.android.material.tabs.TabLayout
-                        android:id="@+id/tabs"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        app:tabMode="scrollable"
-                        app:tabTextColor="@color/colorGray"
-                        app:tabTextAppearance="@style/capfale"
-                        >
-
-                    </com.google.android.material.tabs.TabLayout>
-                </LinearLayout>
 
 
-            </com.google.android.material.appbar.AppBarLayout>
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewpager"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                ></androidx.viewpager.widget.ViewPager>
+                </com.google.android.material.appbar.AppBarLayout>
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    ></androidx.viewpager.widget.ViewPager>
 
 
 
-        </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
     </FrameLayout>
+
     <ExpandableListView
+        android:layout_marginTop="25dp"
         android:id="@+id/ebMenu"
         android:background="@color/colorWhile"
         android:layout_gravity="start"

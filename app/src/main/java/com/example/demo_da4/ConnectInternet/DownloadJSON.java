@@ -19,9 +19,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by Lenovo S410p on 6/25/2016.
- */
 public class DownloadJSON extends AsyncTask<String,Void,String> {
     String duongdan;
     List<HashMap<String,String>> attrs;

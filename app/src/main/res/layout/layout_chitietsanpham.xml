@@ -11,6 +11,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorWhile"
         android:fitsSystemWindows="true">
+
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,7 +31,7 @@
                     android:id="@+id/txt_tensannpham"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="tên sản phẩm"
+                    android:text="Tên sản phẩm"
                     android:textSize="18dp"
                     android:textStyle="bold">
                 </TextView>
@@ -58,20 +59,20 @@
                     android:id="@+id/imgAnhSP"
                     android:layout_width="match_parent"
                     android:layout_height="350dp"
-                    android:src="@drawable/backgroundplashscreen"></ImageView>
+                    android:src="@drawable/backgroundplashscreen">
+                </ImageView>
 
             </LinearLayout>
-
-
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
+                app:titleTextColor="@color/colorBlack"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/bgToolbar"
                 app:theme="@style/menuitemcolor"
                 app:layout_collapseMode="pin">
-
             </androidx.appcompat.widget.Toolbar>
+
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
@@ -99,14 +100,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:background="@color/bgLogo"></View>
-                    <TextView
-                        android:padding="10dp"
-                        android:textColor="@color/tranparenBlack"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="các sản phẩm cùng loại"
-                        android:textAlignment="center">
-                    </TextView>
+<!--                    <TextView-->
+<!--                        android:padding="10dp"-->
+<!--                        android:textColor="@color/tranparenBlack"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="các sản phẩm cùng loại"-->
+<!--                        android:textAlignment="center">-->
+<!--                    </TextView>-->
 
                 </LinearLayout>
 
@@ -126,7 +127,8 @@
                     <TextView
                         android:id="@+id/txt_thongtinsanpham"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp">
                     </TextView>
 
                     <LinearLayout
@@ -205,20 +207,6 @@
 
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:text="Các sản phẩm tương tự"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </TextView>
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                    </androidx.recyclerview.widget.RecyclerView>
-                </LinearLayout>
 
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
@@ -237,6 +225,7 @@
                 android:padding="10dp">
             </Button>
             <ImageButton
+                android:id="@+id/imbtn_themGioHang"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_shopping_cart_white_24dp"

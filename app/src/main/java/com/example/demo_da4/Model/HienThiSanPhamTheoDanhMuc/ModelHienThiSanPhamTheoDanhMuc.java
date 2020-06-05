@@ -37,7 +37,6 @@ public class ModelHienThiSanPhamTheoDanhMuc {
         attrs.add(hsLimit);
 
         DownloadJSON downloadJSON = new DownloadJSON(duongdan,attrs);
-        //end phÆ°Æ¡ng thá»©c post
         downloadJSON.execute();
 
         try {
@@ -50,7 +49,6 @@ public class ModelHienThiSanPhamTheoDanhMuc {
             for (int i = 0; i<dem; i++){
                 SanPham sanPham = new SanPham();
                 JSONObject object = jsonArrayDanhSachSanPham.getJSONObject(i);
-
                 sanPham.setMASP(object.getInt("MASP"));
                 sanPham.setTENSANPHAM(object.getString("TENSP"));
                 sanPham.setGIA(object.getInt("GIATIEN"));

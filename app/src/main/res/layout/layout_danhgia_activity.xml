@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical" android:layout_width="300dp"
+    android:layout_height="500dp"
+    android:layout_gravity="center"
+    android:padding="15dp">
     <TextView
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
@@ -9,16 +11,6 @@
         android:text="Nhận xét về sản phẩm này">
     </TextView>
 
-    <RatingBar
-        android:id="@+id/rb_danhgia"
-        android:layout_width="258dp"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:padding="10dp"
-        android:scaleX="0.5"
-        android:scaleY="0.5"
-        android:transformPivotX="0dp"
-        android:transformPivotY="0dp"></RatingBar>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/ip_tieude"
@@ -58,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Đồng ý "
-        android:layout_marginTop="10dp"></Button>
+        android:layout_marginTop="10dp">
+    </Button>
 
 </LinearLayout>

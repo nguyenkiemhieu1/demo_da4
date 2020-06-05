@@ -18,7 +18,7 @@ public class ModelDangNhap {
 
     public String LayCachedDangNhap(Context context){
         SharedPreferences cachedDangNhap = context.getSharedPreferences("dangnhap",Context.MODE_PRIVATE);
-        String tennv = cachedDangNhap.getString("tennv","");
+        String tennv = cachedDangNhap.getString("tendangnhap","");
 
         return tennv;
     }
@@ -53,7 +53,6 @@ public class ModelDangNhap {
                 SharedPreferences cachedDangNhap = context.getSharedPreferences("dangnhap", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = cachedDangNhap.edit();
                 editor.putString("tennv", tennv);
-
                 editor.commit();
 
             }

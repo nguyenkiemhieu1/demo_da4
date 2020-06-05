@@ -1,8 +1,8 @@
 package com.example.demo_da4.Adapter;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.graphics.Point;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
@@ -16,9 +16,14 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import com.example.demo_da4.Model.ObjectClass.LoaiSanPham;
 import com.example.demo_da4.Model.Trangchu.XuLyMenu.XuLyJSONMenu;
 import com.example.demo_da4.R;
+import com.example.demo_da4.View.HienThiSanPhamTheoDanhMuc.HienThiSanPhamTheoDanhMucActivity;
 
 import java.util.List;
 
@@ -128,7 +133,28 @@ public class ExpandAdapter extends BaseExpandableListAdapter {
         view1.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                Log.d("maloaisp",loaiSanPhams.get(vitriGroupCha).getTENLOAISP() +"_"+loaiSanPhams.get(vitriGroupCha).getMALOAISP());
+//                Log.d("maloaisp",loaiSanPhams.get(vitriGroupCha).getTENLOAISP() +"_"+loaiSanPhams.get(vitriGroupCha).getMALOAISP());
+
+
+                FragmentManager fragmentManager = ((AppCompatActivity)context).getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+                HienThiSanPhamTheoDanhMucActivity h = new HienThiSanPhamTheoDanhMucActivity();
+
+                Bundle bundle = new Bundle();
+
+                bundle.putInt("MALOAI", loaiSanPhams.get(vitriGroupCha).getMALOAISP());
+                bundle.putBoolean("KIEMTRA", false);
+                bundle.putString("TENLOAI", loaiSanPhams.get(vitriGroupCha).getTENLOAISP());
+
+                h.setArguments(bundle);
+
+                fragmentTransaction.addToBackStack("TrangchuActivity");
+
+                fragmentTransaction.replace(R.id.FrameLayout_Add, h);
+
+                fragmentTransaction.commit();
+
                 return false;
             }
         });
